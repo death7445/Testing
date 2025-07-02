@@ -1,5 +1,12 @@
-// filepath: /home/robert-coding/Testing/tests/API.spec.ts
+import fetch from 'node-fetch';
 import { test, expect } from '@playwright/test';
+
+test('GET request using node-fetch', async () => {
+  const response = await fetch('https://leagueify.org/api/data');
+  expect(response.ok).toBeTruthy();
+  const data = await response.json();
+  console.log(data);
+});
 
 test('GET request to example API', async ({ request }) => {
   const response = await request.get('https://leagueify.org');
