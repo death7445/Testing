@@ -1,3 +1,4 @@
+
 import fetch from 'node-fetch';
 import { test, expect } from '@playwright/test';
 
@@ -9,7 +10,7 @@ test('GET request using node-fetch', async () => {
 });
 
 test('GET request to example API', async ({ request }) => {
-  const response = await request.get('https://leagueify.org');
+  const response = await request.get('https://reqres.in/api/users/1');
   expect(response.ok()).toBeTruthy();
   const data = await response.json();
   expect(data).toHaveProperty('id', 1);
