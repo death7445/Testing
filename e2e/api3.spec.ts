@@ -1,13 +1,13 @@
 import fetch from 'node-fetch';
 import { test, expect } from '@playwright/test';
 
-const API_KEY = 'x-api-key: reqres-free-v1';
+const API_KEY = 'reqres-free-v1';
 
 test('GET users using node-fetch', async () => {
   const response = await fetch('https://reqres.in/api/users?page=1', {
     headers: {
-      'x-api-key': API_KEY, // set the header key and value
-    },
+  'x-api-key': API_KEY,
+  }
   });
   console.log('Status:', response.status);
   const body = await response.text();
